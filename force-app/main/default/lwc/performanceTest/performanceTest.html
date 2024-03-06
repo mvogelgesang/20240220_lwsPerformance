@@ -1,0 +1,50 @@
+<template>
+  <div class="slds-box slds-theme_default">
+    <h1>Performance Test</h1>
+    <div>LWS Enabled {isLWSEnabled}</div>
+    <lightning-button-group class="slds-var-m-bottom_medium">
+      <lightning-button
+        label="Test Set"
+        onclick={measureSet}
+      ></lightning-button>
+      <lightning-button
+        label="Test Map"
+        onclick={measureMap}
+      ></lightning-button>
+      <lightning-button
+        label="Test Date"
+        onclick={measureDate}
+      ></lightning-button>
+    </lightning-button-group>
+    <div>
+      <template lwc:if={hasResults}>
+      <table>
+        <thead class="header">
+          <tr>
+            <th>Test Name</th>
+            <th>Test Run #</th>
+            <th>Completion Time (ms)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={results} for:item="item" for:index="index">
+            <tr key={item}>
+              <td>{testName}</td>
+              <td>{index}</td>
+              <td>{item}</td>
+            </tr>
+          </template>
+          <tr class="highlight">
+            <td></td>
+            <td>Average</td>
+            <td>{averageTime}</td>
+          </tr>
+        </tbody>
+      </table>
+    </template>
+    <template lwc:else>
+      <p>Click buttons above to run test</p>
+    </template>
+    </div>
+  </div>
+</template>

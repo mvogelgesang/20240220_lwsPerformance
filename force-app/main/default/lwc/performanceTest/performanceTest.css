@@ -1,0 +1,12 @@
+table {
+  width: 400px;
+}
+tr {
+  border-bottom: 1px solid gray;
+}
+.header {
+  background-color: lightskyblue;
+}
+.highlight {
+  background-color: lightblue;
+}

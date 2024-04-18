@@ -7,6 +7,8 @@ Evaluate and replicate the findings from https://partners.salesforce.com/_ui/cor
 `sf project deploy start`
 `sf org open -p /lightning/n/perfTest`
 
+Run with LWS enabled and LWS disabled. Page may require a hard refresh to ensure LWS settings take effect.
+
 ## Results
 
 | Test Iteration | LWS (ms)   | Locker (ms) |
